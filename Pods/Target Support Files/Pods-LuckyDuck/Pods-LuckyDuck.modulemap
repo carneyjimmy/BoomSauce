@@ -1,0 +1,6 @@
+framework module Pods_LuckyDuck {
+  umbrella header "Pods-LuckyDuck-umbrella.h"
+
+  export *
+  module * { export * }
+}
