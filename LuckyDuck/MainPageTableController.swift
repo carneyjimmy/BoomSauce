@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
-//import FirebaseDatabase
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+
 
 
 class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
@@ -18,10 +21,11 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
     
         var groupKey: String = ""
         var userKey: String = ""
-        var usernameArray = [String]()
+        var titleArray = [String]()
+        var priceArray = [Int]()
         var keyArray = [String]()
         var inGroupArray = [Bool]()
-      //  var db: FIRDatabaseReference!
+        var db: FIRDatabaseReference!
         var filteredUsername = [String]()
         var filteredKey = [String]()
         var filteredInGroup = [Bool]()
@@ -52,15 +56,18 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             let image2 = UIImage(contentsOfFile: bundlePath2!)!
             let image3 = UIImage(contentsOfFile: bundlePath3!)!
             // Store the image in to our cache
+            getNames()
             self.imageCache.append(image)
             self.imageCache.append(image2)
             self.imageCache.append(image3)
+            /*
             self.bannerCache[0] = "Event one!!"
             self.bannerCache[1] = "Event two!!"
             self.bannerCache[2] = "Event three!!"
             self.priceCache[0] = "1$$"
              self.priceCache[1] = "2$$"
              self.priceCache[2] = "3$$"
+            */
             
         }
     
@@ -100,10 +107,10 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             let searchString = searchController.searchBar.text
             
             // Filter the data array and get only those countries that match the search text.
-            for index in 0...usernameArray.count-1{
-                let userText: NSString = usernameArray[index] as NSString
+            for index in 0...titleArray.count-1{
+                let userText: NSString = titleArray[index] as NSString
                 if ((userText.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound){
-                    filteredUsername.append(usernameArray[index])
+                    filteredUsername.append(titleArray[index])
                     filteredKey.append(keyArray[index])
                     filteredInGroup.append(inGroupArray[index])
                 }
@@ -124,7 +131,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
              var hasGroups = false
              while let rest = enumerator.nextObject() as? FIRDataSnapshot {
              if (rest.key == "username"){
-             self.usernameArray.append(rest.value as! String)
+             self.titleArray.append(rest.value as! String)
              }
              if (rest.key == "groups"){
              hasGroups = true
@@ -157,15 +164,17 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
-        myCell.banner.text = bannerCache[indexPath.row]
-        myCell.price.titleLabel?.text = priceCache[indexPath.row]
+        myCell.banner.text = titleArray[indexPath.row]
+        print(priceArray[indexPath.row])
+        myCell.price.setTitle("$$$" + String(priceArray[indexPath.row]), for: .normal)
+        
         myCell.picture.image = imageCache[indexPath.row]
         
         
 
         return myCell
     }
-    /*
+    
     func getNames(){
         let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/Events")
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
@@ -174,33 +183,35 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
                 return
             } else {
                 self.keyArray.append(snapshot.key)
+                
                 let enumerator = snapshot.children
                 
                 while let rest = enumerator.nextObject() as? FIRDataSnapshot {
-                    if (rest.key == "username"){
-                        self.usernameArray.append(rest.value as! String)
-                    }
-                    if (rest.key == "groups"){
+                    
+                    if (rest.key == "Name"){
                        
-                        let enumerator2 = rest.children
-                        var inGroup = false
-                        while let groups = enumerator2.nextObject() as? FIRDataSnapshot{
-                            if(groups.key == self.groupKey){
-                                inGroup = true
-                            }
-                        }
-                        self.inGroupArray.append(inGroup)
+                        self.titleArray.append(rest.value as! String)
+                        self.tableView.reloadData()
+                    }
+                    if (rest.key == "Price"){
+                       
+                        self.priceArray.append(rest.value as! Int)
+                        print(rest.value as! Int)
+                        self.searchTable.reloadData()
+                        
+                        
                     }
                 }
               
-                self.searchTable.reloadData()
+                
             }
         });
     }
-    */
+    
+    /*
     func addPicture(key: [String], indexPath: Int, myCell: EventCell){
         var urlString: String = ""
-      /*  let ref = FIRDatabase.database().reference(fromURL: "https://taskforce-ad0be.firebaseio.com/users/\(key[indexPath])")
+        let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/users/\(key[indexPath])")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 return
@@ -245,11 +256,13 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
                 }
             }
         });
- */
-        
+ 
+       
+ 
     }
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+ */
+ override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return priceArray.count
     }
     //
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

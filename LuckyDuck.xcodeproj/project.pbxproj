@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		123A9E7E3986150AB25A0B69 /* Pods_LuckyDuck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06450579768737B5ACEA96DF /* Pods_LuckyDuck.framework */; };
+		5F3945501EF8378700FD6649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */; };
 		5F474E211EF1AB560086F9C4 /* MainPageTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */; };
-		5F8AE39C1EF7047400B4C97E /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F8AE39B1EF7047400B4C97E /* GoogleService-Info .plist */; };
 		5F8F18171EEB24FF003D2579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F18161EEB24FF003D2579 /* AppDelegate.swift */; };
 		5F8F18191EEB24FF003D2579 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F18181EEB24FF003D2579 /* FirstViewController.swift */; };
 		5F8F181B1EEB24FF003D2579 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F181A1EEB24FF003D2579 /* SecondViewController.swift */; };
@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		06450579768737B5ACEA96DF /* Pods_LuckyDuck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyDuck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FE16E894E86D141F7582F8 /* Pods-LuckyDuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyDuck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuckyDuck/Pods-LuckyDuck.debug.xcconfig"; sourceTree = "<group>"; };
+		5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageTableController.swift; sourceTree = "<group>"; };
-		5F8AE39B1EF7047400B4C97E /* GoogleService-Info .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info .plist"; sourceTree = "<group>"; };
 		5F8F18131EEB24FF003D2579 /* LuckyDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8F18161EEB24FF003D2579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8F18181EEB24FF003D2579 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				5F8F18161EEB24FF003D2579 /* AppDelegate.swift */,
-				5F8AE39B1EF7047400B4C97E /* GoogleService-Info .plist */,
 				5FDAE1891EF0470A008052D6 /* EventCell.swift */,
 				5F8F18181EEB24FF003D2579 /* FirstViewController.swift */,
 				5FDAE18B1EF05603008052D6 /* EventTable.swift */,
@@ -107,6 +106,7 @@
 				5F8F181F1EEB24FF003D2579 /* Assets.xcassets */,
 				5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */,
 				5F8F18211EEB24FF003D2579 /* LaunchScreen.storyboard */,
+				5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */,
 				5F8F18241EEB24FF003D2579 /* Info.plist */,
 			);
 			path = LuckyDuck;
@@ -179,8 +179,8 @@
 				5FBDE9271EF264B100F43FAC /* skateboard.jpeg in Resources */,
 				5F8F18201EEB24FF003D2579 /* Assets.xcassets in Resources */,
 				5F8F182B1EEB27D1003D2579 /* orderstatus3.jpg in Resources */,
-				5F8AE39C1EF7047400B4C97E /* GoogleService-Info .plist in Resources */,
 				5F8F181E1EEB24FF003D2579 /* Main.storyboard in Resources */,
+				5F3945501EF8378700FD6649 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

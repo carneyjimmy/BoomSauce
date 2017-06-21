@@ -7,5 +7,6 @@ target 'LuckyDuck' do
 
   # Pods for LuckyDuck
 pod 'Firebase/Core'
-
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end
