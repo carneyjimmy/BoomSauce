@@ -14,10 +14,14 @@ import FirebaseAuth
 
 
 
-class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate   {
     
 
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet var searchTable: UITableView!
+    
+   
+    @IBOutlet weak var nav: UINavigationItem!
     
         var groupKey: String = ""
         var userKey: String = ""
@@ -44,13 +48,14 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             super.viewDidLoad()
             searchTable.delegate = self as! UITableViewDelegate
             searchTable.dataSource = self as! UITableViewDataSource
+            search.barTintColor = UIColor.clear
             configureSearchController()
             //db = FIRDatabase.database().reference()
             getUsernamesKeys()
             //userKey = (UserDefaults.standard.value(forKey: "user_id_taskforce")) as! String
-            let bundlePath = Bundle.main.path(forResource: "basketball", ofType: "jpeg")
-            let bundlePath2 = Bundle.main.path(forResource: "skateboard", ofType: "jpeg")
-            let bundlePath3 = Bundle.main.path(forResource: "orderstatus3", ofType: "jpg")
+            let bundlePath = Bundle.main.path(forResource: "desktop-hamiltons", ofType: "jpg")
+            let bundlePath3 = Bundle.main.path(forResource: "Monarch_Cruise_Ship_uhd", ofType: "jpg")
+            let bundlePath2 = Bundle.main.path(forResource: "nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7", ofType: "jpg")
             
             let image = UIImage(contentsOfFile: bundlePath!)!
             let image2 = UIImage(contentsOfFile: bundlePath2!)!
@@ -68,6 +73,12 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
              self.priceCache[1] = "2$$"
              self.priceCache[2] = "3$$"
             */
+            
+            let imageNav : UIImage = UIImage(named: "logo.png")!
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = imageNav
+            nav.titleView = imageView
             
         }
     
@@ -162,17 +173,35 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             super.viewDidAppear(animated)
             searchTable.reloadData()
         }
+
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        
+    }
+    
+     var pickerData = ["All", "Featured", "Sports", "Getaways", "lessons", "Food"]
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+             let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "PickerCell", for: indexPath) as! PickerCell
+            return myCell
+            
+        }
+        else {
         let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
-        myCell.banner.text = titleArray[indexPath.row]
-        print(priceArray[indexPath.row])
-        myCell.price.setTitle("$$$" + String(priceArray[indexPath.row]), for: .normal)
+        myCell.banner.text = titleArray[indexPath.row - 1]
+        print(priceArray[indexPath.row - 1])
+        myCell.price.setTitle("$" + String(priceArray[indexPath.row - 1]), for: .normal)
         
-        myCell.picture.image = imageCache[indexPath.row]
+        myCell.picture.image = imageCache[indexPath.row - 1]
         
+            
         
 
         return myCell
+        }
+        
     }
     
     func getNames(){
@@ -261,13 +290,27 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
  
     }
  */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (indexPath.row == 0){
+        return 60.0;//Choose your custom row height}
+        }
+            else{
+                return 150.0
+            }
+    }
+ 
  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return priceArray.count
+        return priceArray.count + 1
     }
     //
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
+    
+
+
     //
 
 }

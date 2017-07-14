@@ -9,16 +9,31 @@
 /* Begin PBXBuildFile section */
 		123A9E7E3986150AB25A0B69 /* Pods_LuckyDuck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06450579768737B5ACEA96DF /* Pods_LuckyDuck.framework */; };
 		5F3945501EF8378700FD6649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */; };
+		5F3FCFFD1F15B585007BD6C2 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FCFFC1F15B585007BD6C2 /* PickerCell.swift */; };
 		5F474E211EF1AB560086F9C4 /* MainPageTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */; };
+		5F860B391F13118400879345 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F860B381F13118400879345 /* InfoViewController.swift */; };
+		5F860B3B1F147FD200879345 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F860B3A1F147FD200879345 /* SearchViewController.swift */; };
 		5F8F18171EEB24FF003D2579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F18161EEB24FF003D2579 /* AppDelegate.swift */; };
 		5F8F18191EEB24FF003D2579 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F18181EEB24FF003D2579 /* FirstViewController.swift */; };
 		5F8F181B1EEB24FF003D2579 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F181A1EEB24FF003D2579 /* SecondViewController.swift */; };
 		5F8F181E1EEB24FF003D2579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8F181C1EEB24FF003D2579 /* Main.storyboard */; };
 		5F8F18201EEB24FF003D2579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8F181F1EEB24FF003D2579 /* Assets.xcassets */; };
 		5F8F18231EEB24FF003D2579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8F18211EEB24FF003D2579 /* LaunchScreen.storyboard */; };
-		5F8F182B1EEB27D1003D2579 /* orderstatus3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F8F182A1EEB27D1003D2579 /* orderstatus3.jpg */; };
-		5FBDE9271EF264B100F43FAC /* skateboard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5FBDE9261EF264B100F43FAC /* skateboard.jpeg */; };
-		5FBDE9291EF264D000F43FAC /* basketball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5FBDE9281EF264D000F43FAC /* basketball.jpeg */; };
+		5F9460E81F16E7A10047B9E6 /* noun_975493_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460E71F16E7A10047B9E6 /* noun_975493_F38F19.png */; };
+		5F9460EA1F16E7B50047B9E6 /* noun_1065795_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460E91F16E7B50047B9E6 /* noun_1065795_F38F19.png */; };
+		5F9460EC1F16E7D60047B9E6 /* noun_579517_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460EB1F16E7D60047B9E6 /* noun_579517_F38F19.png */; };
+		5F9460EE1F16E7EF0047B9E6 /* noun_605723_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460ED1F16E7EF0047B9E6 /* noun_605723_F38F19.png */; };
+		5F9460F01F16E8A60047B9E6 /* noun_1003231_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460EF1F16E8A60047B9E6 /* noun_1003231_F38F19.png */; };
+		5F9460F21F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460F11F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg */; };
+		5F9460F61F16FB280047B9E6 /* desktop-hamiltons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460F51F16FB280047B9E6 /* desktop-hamiltons.jpg */; };
+		5F9460F81F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460F71F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg */; };
+		5F9460FC1F1721270047B9E6 /* noun_729313_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460FB1F1721270047B9E6 /* noun_729313_F38F19.png */; };
+		5F9460FE1F17236E0047B9E6 /* noun_1092684_F38F19.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9460FD1F17236E0047B9E6 /* noun_1092684_F38F19.png */; };
+		5F9461061F1728800047B9E6 /* white4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9461051F17287F0047B9E6 /* white4.png */; };
+		5F94610E1F172F6B0047B9E6 /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F94610D1F172F6B0047B9E6 /* fav.png */; };
+		5F9461101F17325A0047B9E6 /* longlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F94610F1F17325A0047B9E6 /* longlogo.png */; };
+		5F9461121F17330E0047B9E6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9461111F17330E0047B9E6 /* logo.png */; };
+		5F9461141F17370E0047B9E6 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9461131F17370E0047B9E6 /* favFill.png */; };
 		5FDAE18A1EF0470A008052D6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAE1891EF0470A008052D6 /* EventCell.swift */; };
 		5FDAE18C1EF05603008052D6 /* EventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAE18B1EF05603008052D6 /* EventTable.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +42,10 @@
 		06450579768737B5ACEA96DF /* Pods_LuckyDuck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyDuck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FE16E894E86D141F7582F8 /* Pods-LuckyDuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyDuck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuckyDuck/Pods-LuckyDuck.debug.xcconfig"; sourceTree = "<group>"; };
 		5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F3FCFFC1F15B585007BD6C2 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageTableController.swift; sourceTree = "<group>"; };
+		5F860B381F13118400879345 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		5F860B3A1F147FD200879345 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5F8F18131EEB24FF003D2579 /* LuckyDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8F18161EEB24FF003D2579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8F18181EEB24FF003D2579 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -36,9 +54,21 @@
 		5F8F181F1EEB24FF003D2579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8F18221EEB24FF003D2579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F8F18241EEB24FF003D2579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F8F182A1EEB27D1003D2579 /* orderstatus3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orderstatus3.jpg; sourceTree = "<group>"; };
-		5FBDE9261EF264B100F43FAC /* skateboard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skateboard.jpeg; sourceTree = "<group>"; };
-		5FBDE9281EF264D000F43FAC /* basketball.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basketball.jpeg; sourceTree = "<group>"; };
+		5F9460E71F16E7A10047B9E6 /* noun_975493_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_975493_F38F19.png; sourceTree = "<group>"; };
+		5F9460E91F16E7B50047B9E6 /* noun_1065795_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_1065795_F38F19.png; sourceTree = "<group>"; };
+		5F9460EB1F16E7D60047B9E6 /* noun_579517_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_579517_F38F19.png; sourceTree = "<group>"; };
+		5F9460ED1F16E7EF0047B9E6 /* noun_605723_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_605723_F38F19.png; sourceTree = "<group>"; };
+		5F9460EF1F16E8A60047B9E6 /* noun_1003231_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_1003231_F38F19.png; sourceTree = "<group>"; };
+		5F9460F11F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Monarch_Cruise_Ship_uhd.jpg; sourceTree = "<group>"; };
+		5F9460F51F16FB280047B9E6 /* desktop-hamiltons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "desktop-hamiltons.jpg"; sourceTree = "<group>"; };
+		5F9460F71F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg"; sourceTree = "<group>"; };
+		5F9460FB1F1721270047B9E6 /* noun_729313_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_729313_F38F19.png; sourceTree = "<group>"; };
+		5F9460FD1F17236E0047B9E6 /* noun_1092684_F38F19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_1092684_F38F19.png; sourceTree = "<group>"; };
+		5F9461051F17287F0047B9E6 /* white4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white4.png; sourceTree = "<group>"; };
+		5F94610D1F172F6B0047B9E6 /* fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav.png; sourceTree = "<group>"; };
+		5F94610F1F17325A0047B9E6 /* longlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longlogo.png; sourceTree = "<group>"; };
+		5F9461111F17330E0047B9E6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5F9461131F17370E0047B9E6 /* favFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favFill.png; sourceTree = "<group>"; };
 		5FDAE1891EF0470A008052D6 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		5FDAE18B1EF05603008052D6 /* EventTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTable.swift; sourceTree = "<group>"; };
 		DB7CF79AD7814969EE52CD6C /* Pods-LuckyDuck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyDuck.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuckyDuck/Pods-LuckyDuck.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,19 +125,34 @@
 			isa = PBXGroup;
 			children = (
 				5F8F18161EEB24FF003D2579 /* AppDelegate.swift */,
+				5F860B3A1F147FD200879345 /* SearchViewController.swift */,
 				5FDAE1891EF0470A008052D6 /* EventCell.swift */,
+				5F3FCFFC1F15B585007BD6C2 /* PickerCell.swift */,
 				5F8F18181EEB24FF003D2579 /* FirstViewController.swift */,
+				5F9461111F17330E0047B9E6 /* logo.png */,
+				5F94610F1F17325A0047B9E6 /* longlogo.png */,
+				5F9461051F17287F0047B9E6 /* white4.png */,
+				5F9460F71F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg */,
+				5F9460F51F16FB280047B9E6 /* desktop-hamiltons.jpg */,
+				5F9460FD1F17236E0047B9E6 /* noun_1092684_F38F19.png */,
+				5F9460FB1F1721270047B9E6 /* noun_729313_F38F19.png */,
+				5F9460F11F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg */,
+				5F9460ED1F16E7EF0047B9E6 /* noun_605723_F38F19.png */,
+				5F9460E71F16E7A10047B9E6 /* noun_975493_F38F19.png */,
+				5F9460EF1F16E8A60047B9E6 /* noun_1003231_F38F19.png */,
+				5F9460E91F16E7B50047B9E6 /* noun_1065795_F38F19.png */,
+				5F9460EB1F16E7D60047B9E6 /* noun_579517_F38F19.png */,
+				5F94610D1F172F6B0047B9E6 /* fav.png */,
+				5F9461131F17370E0047B9E6 /* favFill.png */,
 				5FDAE18B1EF05603008052D6 /* EventTable.swift */,
 				5F8F181A1EEB24FF003D2579 /* SecondViewController.swift */,
-				5FBDE9281EF264D000F43FAC /* basketball.jpeg */,
-				5FBDE9261EF264B100F43FAC /* skateboard.jpeg */,
 				5F8F181C1EEB24FF003D2579 /* Main.storyboard */,
-				5F8F182A1EEB27D1003D2579 /* orderstatus3.jpg */,
 				5F8F181F1EEB24FF003D2579 /* Assets.xcassets */,
 				5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */,
 				5F8F18211EEB24FF003D2579 /* LaunchScreen.storyboard */,
 				5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */,
 				5F8F18241EEB24FF003D2579 /* Info.plist */,
+				5F860B381F13118400879345 /* InfoViewController.swift */,
 			);
 			path = LuckyDuck;
 			sourceTree = "<group>";
@@ -147,6 +192,7 @@
 				TargetAttributes = {
 					5F8F18121EEB24FF003D2579 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5KYX7246HH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -174,13 +220,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FBDE9291EF264D000F43FAC /* basketball.jpeg in Resources */,
 				5F8F18231EEB24FF003D2579 /* LaunchScreen.storyboard in Resources */,
-				5FBDE9271EF264B100F43FAC /* skateboard.jpeg in Resources */,
+				5F9461061F1728800047B9E6 /* white4.png in Resources */,
+				5F9461121F17330E0047B9E6 /* logo.png in Resources */,
 				5F8F18201EEB24FF003D2579 /* Assets.xcassets in Resources */,
-				5F8F182B1EEB27D1003D2579 /* orderstatus3.jpg in Resources */,
+				5F94610E1F172F6B0047B9E6 /* fav.png in Resources */,
+				5F9460F21F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg in Resources */,
+				5F9460FE1F17236E0047B9E6 /* noun_1092684_F38F19.png in Resources */,
+				5F9460F01F16E8A60047B9E6 /* noun_1003231_F38F19.png in Resources */,
 				5F8F181E1EEB24FF003D2579 /* Main.storyboard in Resources */,
+				5F9460EA1F16E7B50047B9E6 /* noun_1065795_F38F19.png in Resources */,
 				5F3945501EF8378700FD6649 /* GoogleService-Info.plist in Resources */,
+				5F9460EE1F16E7EF0047B9E6 /* noun_605723_F38F19.png in Resources */,
+				5F9460EC1F16E7D60047B9E6 /* noun_579517_F38F19.png in Resources */,
+				5F9460FC1F1721270047B9E6 /* noun_729313_F38F19.png in Resources */,
+				5F9460E81F16E7A10047B9E6 /* noun_975493_F38F19.png in Resources */,
+				5F9460F81F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg in Resources */,
+				5F9460F61F16FB280047B9E6 /* desktop-hamiltons.jpg in Resources */,
+				5F9461101F17325A0047B9E6 /* longlogo.png in Resources */,
+				5F9461141F17370E0047B9E6 /* favFill.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +299,10 @@
 			files = (
 				5F474E211EF1AB560086F9C4 /* MainPageTableController.swift in Sources */,
 				5F8F181B1EEB24FF003D2579 /* SecondViewController.swift in Sources */,
+				5F860B3B1F147FD200879345 /* SearchViewController.swift in Sources */,
 				5FDAE18C1EF05603008052D6 /* EventTable.swift in Sources */,
+				5F860B391F13118400879345 /* InfoViewController.swift in Sources */,
+				5F3FCFFD1F15B585007BD6C2 /* PickerCell.swift in Sources */,
 				5F8F18171EEB24FF003D2579 /* AppDelegate.swift in Sources */,
 				5FDAE18A1EF0470A008052D6 /* EventCell.swift in Sources */,
 				5F8F18191EEB24FF003D2579 /* FirstViewController.swift in Sources */,
@@ -368,6 +429,7 @@
 			baseConfigurationReference = 28FE16E894E86D141F7582F8 /* Pods-LuckyDuck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5KYX7246HH;
 				INFOPLIST_FILE = LuckyDuck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.boomsauce;
@@ -381,6 +443,7 @@
 			baseConfigurationReference = DB7CF79AD7814969EE52CD6C /* Pods-LuckyDuck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5KYX7246HH;
 				INFOPLIST_FILE = LuckyDuck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.boomsauce;
