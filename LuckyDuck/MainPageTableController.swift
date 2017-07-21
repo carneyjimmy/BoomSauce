@@ -12,6 +12,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+var selectedName =  ""
 
 
 class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate   {
@@ -34,6 +35,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         var filteredKey = [String]()
         var filteredInGroup = [Bool]()
         var shouldShowResults: Bool = false
+    
         
         var searchController = UISearchController()
     
@@ -42,6 +44,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         var bannerCache = ["","",""]
         var priceCache = ["","",""]
         var isAdmin: Bool = false
+    
         
     
         override func viewDidLoad() {
@@ -65,14 +68,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             self.imageCache.append(image)
             self.imageCache.append(image2)
             self.imageCache.append(image3)
-            /*
-            self.bannerCache[0] = "Event one!!"
-            self.bannerCache[1] = "Event two!!"
-            self.bannerCache[2] = "Event three!!"
-            self.priceCache[0] = "1$$"
-             self.priceCache[1] = "2$$"
-             self.priceCache[2] = "3$$"
-            */
+
             
             let imageNav : UIImage = UIImage(named: "logo.png")!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
@@ -182,6 +178,8 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
     }
     
      var pickerData = ["All", "Featured", "Sports", "Getaways", "lessons", "Food"]
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
              let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "PickerCell", for: indexPath) as! PickerCell
@@ -203,40 +201,48 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         }
         
     }
-    
     func getNames(){
-        let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/Events")
+        let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/Events/")
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
             
             if let _ = snapshot.value as? NSNull {
                 return
             } else {
                 self.keyArray.append(snapshot.key)
+                print(self.keyArray)
+                
+                
                 
                 let enumerator = snapshot.children
                 
                 while let rest = enumerator.nextObject() as? FIRDataSnapshot {
                     
                     if (rest.key == "Name"){
-                       
+                        
                         self.titleArray.append(rest.value as! String)
                         self.tableView.reloadData()
                     }
                     if (rest.key == "Price"){
-                       
+                        
                         self.priceArray.append(rest.value as! Int)
-                        print(rest.value as! Int)
+                        
                         self.searchTable.reloadData()
                         
                         
                     }
                 }
-              
+                
                 
             }
         });
     }
-    
+ 
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedName = keyArray[indexPath.row - 1]
+        
+        
+    }
     /*
     func addPicture(key: [String], indexPath: Int, myCell: EventCell){
         var urlString: String = ""
@@ -309,6 +315,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         cell.backgroundColor = UIColor.clear
     }
     
+ 
 
 
     //

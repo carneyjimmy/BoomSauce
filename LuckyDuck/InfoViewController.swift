@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import Firebase
+
+var mybidnumber = 1
+var totalBidNumber = 388
 
 class InfoViewController: UIViewController {
     
     @IBOutlet weak var nav: UINavigationItem!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var deadlineTag: UILabel!
+    @IBOutlet weak var mybids: UIButton!
+    @IBOutlet weak var totalBids: UIButton!
+    @IBOutlet weak var priceButton: UIButton!
+    @IBOutlet weak var imageview: UIImageView!
+    
+   
     var isFull = false
 
+    @IBAction func bidButtonClicked(_ sender: Any) {
+        mybidnumber += 1
+        totalBidNumber += 1
+        totalBids.setTitle(String(totalBidNumber), for: UIControlState.normal)
+        mybids.setTitle(String(mybidnumber), for: UIControlState.normal)
+        
+    }
 
     @IBAction func changeFav(_ sender: Any) {
         print("here!")
@@ -43,11 +62,11 @@ class InfoViewController: UIViewController {
     }
     
     @IBOutlet weak var fav: UIBarButtonItem!
-    @IBOutlet weak var bidButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bidButton.layer.cornerRadius = 20; // this value vary as per your desire
-        bidButton.clipsToBounds = true
+        priceButton.layer.cornerRadius = 20; // this value vary as per your desire
+        priceButton.clipsToBounds = true
         let favimage : UIImage = UIImage(named: "fav.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
@@ -56,7 +75,14 @@ class InfoViewController: UIViewController {
         
         
         fav.image = favimage
+        getNames()
+        
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNames()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +90,59 @@ class InfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getPicture(){
+        var imageUrl = ""
+        let ref = FIRDatabase.database().reference()
+        ref.child("Events/\(selectedName)").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            if let _ = snapshot.value as? NSNull {
+                return
+            } else {
+                let value = snapshot.value as? NSDictionary
+                
+                let imageurl = value?["Image"] as? String ?? ""
+            }
+        })
+    
+        let url = URL(string: imageUrl)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        imageview.image = UIImage(data: data!)
+    }
+    
+    func getNames(){
+        let ref = FIRDatabase.database().reference()
+        ref.child("Events/\(selectedName)").observeSingleEvent(of: .value, with: { (snapshot) in
+       print("Events/\(selectedName)")
+            
+            if let _ = snapshot.value as? NSNull {
+                return
+            } else {
+                let value = snapshot.value as? NSDictionary
+                
+                let name = value?["Name"] as? String ?? ""
+                let title = value?["Title"] as? String ?? ""
+                let description = value?["Description"] as? String ?? ""
+                let price = value?["Price"] as? Double ?? 0.0
+                
+               // let location = value?["location"] as? String ?? ""
+                //   let time = value?["when"] as? String ?? ""
+                //   let date = value?["date"] as? String ?? ""
+                let deadline = value?["deadline"] as? String ?? ""
+               
+                
+                self.nav.title = title
+                self.descriptionLabel.text = description
+                self.deadlineTag.text = deadline
+                self.priceButton.setTitle("$" + String(price) + "0", for: UIControlState.normal)
+                self.totalBids.titleLabel?.text = String(totalBidNumber)
+                
+                
+                
+                
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation

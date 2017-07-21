@@ -104,9 +104,12 @@
                                     <constraint firstAttribute="height" constant="47" id="zp5-0b-X6k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="5$">
+                                <state key="normal" title="2$">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="bidButtonClicked:" destination="ZNF-Pf-FND" eventType="touchUpInside" id="bDO-7h-75k"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Bids" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueT-eS-RJs">
                                 <rect key="frame" x="258" y="332" width="75" height="21"/>
@@ -158,9 +161,14 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="bidButton" destination="mQn-vM-Mki" id="uf2-8u-tsi"/>
+                        <outlet property="deadlineTag" destination="xYu-KC-FP5" id="1w0-vu-XDz"/>
+                        <outlet property="descriptionLabel" destination="aJs-3W-PnV" id="zuM-QC-aJd"/>
                         <outlet property="fav" destination="X72-qd-LIh" id="Fs1-Dq-slk"/>
+                        <outlet property="imageview" destination="CqY-PT-5Yh" id="35J-wL-Skl"/>
+                        <outlet property="mybids" destination="Qp0-pX-KCW" id="5vX-aT-irr"/>
                         <outlet property="nav" destination="cBc-rk-YLG" id="PAI-1R-42e"/>
+                        <outlet property="priceButton" destination="mQn-vM-Mki" id="QXB-jg-ujY"/>
+                        <outlet property="totalBids" destination="e9z-Pd-p7h" id="96C-5Z-GX8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glZ-GF-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,11 +233,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="R8L-QI-HaT"/>
+                    <navigationItem key="navigationItem" id="Ebl-mI-12o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hw8-Li-YMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-625" y="1657"/>
+            <point key="canvasLocation" x="312.80000000000001" y="1656.521739130435"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -269,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="1077"/>
+            <point key="canvasLocation" x="2056.8000000000002" y="1076.311844077961"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -284,7 +292,7 @@
                     <connections>
                         <segue destination="DqC-II-215" kind="relationship" relationship="viewControllers" id="Lht-2j-Kbd"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="Xeq-2i-LZ9" kind="relationship" relationship="viewControllers" id="Icf-vq-hll"/>
+                        <segue destination="Ktr-5H-FOi" kind="relationship" relationship="viewControllers" id="Icf-vq-hll"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
@@ -319,17 +327,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1092684_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Dd-4e-H4z">
-                                            <rect key="frame" x="90" y="8" width="42" height="36"/>
+                                            <rect key="frame" x="87" y="8" width="44" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1065795_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="GPh-a5-Sft">
-                                            <rect key="frame" x="166" y="8" width="42" height="36"/>
+                                            <rect key="frame" x="163" y="8" width="44" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_579517_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-8W-yK7">
-                                            <rect key="frame" x="243" y="8" width="42" height="36"/>
+                                            <rect key="frame" x="241" y="8" width="42" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
@@ -404,23 +412,11 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-J5-uzI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="146" id="KIw-uy-kBj"/>
-                                            </constraints>
-                                            <connections>
-                                                <segue destination="ZNF-Pf-FND" kind="show" id="LKv-nh-eWb"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9nG-l7-VNk" firstAttribute="centerX" secondItem="hp4-pZ-kv4" secondAttribute="centerX" id="AtX-v1-Uvn"/>
-                                        <constraint firstItem="r0n-J5-uzI" firstAttribute="leading" secondItem="hp4-pZ-kv4" secondAttribute="leading" id="BDa-zc-FcA"/>
                                         <constraint firstAttribute="trailing" secondItem="9nG-l7-VNk" secondAttribute="trailing" id="EDr-od-7HE"/>
                                         <constraint firstAttribute="bottom" secondItem="BIO-vm-KgW" secondAttribute="bottom" id="Ekm-JR-ggJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="r0n-J5-uzI" secondAttribute="trailing" id="IS9-m5-GH5"/>
-                                        <constraint firstItem="r0n-J5-uzI" firstAttribute="top" secondItem="hp4-pZ-kv4" secondAttribute="top" id="f1g-UJ-rNv"/>
                                         <constraint firstAttribute="trailing" secondItem="BIO-vm-KgW" secondAttribute="trailing" id="l9M-Cp-s6Z"/>
                                         <constraint firstItem="9nG-l7-VNk" firstAttribute="top" secondItem="hp4-pZ-kv4" secondAttribute="top" constant="41" id="lEH-ks-w8K"/>
                                         <constraint firstItem="9nG-l7-VNk" firstAttribute="leading" secondItem="hp4-pZ-kv4" secondAttribute="leading" id="lah-FR-clU"/>
@@ -430,6 +426,7 @@
                                     <outlet property="banner" destination="9nG-l7-VNk" id="pAl-K3-smY"/>
                                     <outlet property="picture" destination="I8p-oR-2Qq" id="fhB-nr-w75"/>
                                     <outlet property="price" destination="BIO-vm-KgW" id="Z3j-zc-n7I"/>
+                                    <segue destination="ZNF-Pf-FND" kind="show" id="aOD-mn-wYI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -514,12 +511,12 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="MCW-D2-f4L">
-                                        <rect key="frame" x="245" y="8" width="42" height="36"/>
+                                        <rect key="frame" x="244" y="8" width="42" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="R07-O5-7P7">
-                                        <rect key="frame" x="312" y="8" width="42" height="36"/>
+                                        <rect key="frame" x="312" y="8" width="41" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
@@ -604,6 +601,25 @@
             </objects>
             <point key="canvasLocation" x="-775.20000000000005" y="-733.5832083958021"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lXs-5R-FDx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ktr-5H-FOi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="R8L-QI-HaT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PMY-hK-SIL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xeq-2i-LZ9" kind="relationship" relationship="rootViewController" id="7kk-nD-2mB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISa-Mv-cG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626.39999999999998" y="1656.521739130435"/>
+        </scene>
     </scenes>
     <resources>
         <image name="desktop-hamiltons.jpg" width="1920" height="1080"/>
@@ -617,6 +633,6 @@
         <image name="white4.png" width="1152" height="1152"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Whb-8b-HbT"/>
+        <segue reference="tc7-HG-qYW"/>
     </inferredMetricsTieBreakers>
 </document>
