@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="daY-G9-WSY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -165,10 +165,10 @@
                         <outlet property="descriptionLabel" destination="aJs-3W-PnV" id="zuM-QC-aJd"/>
                         <outlet property="fav" destination="X72-qd-LIh" id="Fs1-Dq-slk"/>
                         <outlet property="imageview" destination="CqY-PT-5Yh" id="35J-wL-Skl"/>
-                        <outlet property="mybids" destination="Qp0-pX-KCW" id="5vX-aT-irr"/>
+                        <outlet property="mybids" destination="ejE-wL-CJw" id="8R8-HV-0Jd"/>
                         <outlet property="nav" destination="cBc-rk-YLG" id="PAI-1R-42e"/>
                         <outlet property="priceButton" destination="mQn-vM-Mki" id="QXB-jg-ujY"/>
-                        <outlet property="totalBids" destination="e9z-Pd-p7h" id="96C-5Z-GX8"/>
+                        <outlet property="totalBids" destination="374-gM-Vqh" id="FZl-Vu-QWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glZ-GF-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,6 +279,27 @@
             </objects>
             <point key="canvasLocation" x="2056.8000000000002" y="1076.311844077961"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="azq-6H-b6W">
+            <objects>
+                <viewController id="daY-G9-WSY" customClass="Login" customModule="LuckyDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="imf-WV-Byz"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Sp-WZ-DU6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FNr-Xy-2Tt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" id="zox-rR-T8A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UrZ-MT-2Lb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1883" y="75"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -327,7 +348,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1092684_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Dd-4e-H4z">
-                                            <rect key="frame" x="87" y="8" width="44" height="36"/>
+                                            <rect key="frame" x="86" y="8" width="44" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
@@ -337,7 +358,7 @@
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_579517_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-8W-yK7">
-                                            <rect key="frame" x="241" y="8" width="42" height="36"/>
+                                            <rect key="frame" x="241" y="8" width="40" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
@@ -372,7 +393,7 @@
                                             <state key="normal" backgroundImage="noun_729313_F38F19.png"/>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_605723_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="uTv-M3-zmM">
-                                            <rect key="frame" x="317" y="8" width="42" height="36"/>
+                                            <rect key="frame" x="315" y="8" width="43" height="36"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </imageView>
@@ -506,17 +527,17 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-h2-Ouu">
-                                        <rect key="frame" x="90" y="8" width="42" height="36"/>
+                                        <rect key="frame" x="89" y="8" width="43" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="MCW-D2-f4L">
-                                        <rect key="frame" x="244" y="8" width="42" height="36"/>
+                                        <rect key="frame" x="244" y="8" width="40" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="R07-O5-7P7">
-                                        <rect key="frame" x="312" y="8" width="41" height="36"/>
+                                        <rect key="frame" x="312" y="8" width="39" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
@@ -526,7 +547,7 @@
                                         <state key="normal" backgroundImage="noun_1003231_F38F19.png"/>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_975493_F38F19.png" translatesAutoresizingMaskIntoConstraints="NO" id="xid-I5-Ajz">
-                                        <rect key="frame" x="166" y="8" width="42" height="36"/>
+                                        <rect key="frame" x="166" y="8" width="40" height="36"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>

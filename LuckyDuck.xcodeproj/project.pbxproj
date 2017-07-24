@@ -34,8 +34,11 @@
 		5F9461101F17325A0047B9E6 /* longlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F94610F1F17325A0047B9E6 /* longlogo.png */; };
 		5F9461121F17330E0047B9E6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9461111F17330E0047B9E6 /* logo.png */; };
 		5F9461141F17370E0047B9E6 /* favFill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9461131F17370E0047B9E6 /* favFill.png */; };
+		5F952EC51F252E0900D6BE60 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F952EC41F252E0900D6BE60 /* Login.swift */; };
+		5F952EC71F25334400D6BE60 /* FBSDKLoginKit in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F952EC61F25334400D6BE60 /* FBSDKLoginKit */; };
 		5FDAE18A1EF0470A008052D6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAE1891EF0470A008052D6 /* EventCell.swift */; };
 		5FDAE18C1EF05603008052D6 /* EventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAE18B1EF05603008052D6 /* EventTable.swift */; };
+		5FED408F1F25764A00BF1102 /* clock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FED408E1F25764A00BF1102 /* clock.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,8 +72,12 @@
 		5F94610F1F17325A0047B9E6 /* longlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longlogo.png; sourceTree = "<group>"; };
 		5F9461111F17330E0047B9E6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		5F9461131F17370E0047B9E6 /* favFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favFill.png; sourceTree = "<group>"; };
+		5F952EC41F252E0900D6BE60 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		5F952EC61F25334400D6BE60 /* FBSDKLoginKit */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = FBSDKLoginKit; sourceTree = "<group>"; };
 		5FDAE1891EF0470A008052D6 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		5FDAE18B1EF05603008052D6 /* EventTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTable.swift; sourceTree = "<group>"; };
+		5FED408E1F25764A00BF1102 /* clock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clock.jpg; sourceTree = "<group>"; };
+		5FED40901F25930000BF1102 /* LuckyDuck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LuckyDuck.entitlements; sourceTree = "<group>"; };
 		DB7CF79AD7814969EE52CD6C /* Pods-LuckyDuck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyDuck.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuckyDuck/Pods-LuckyDuck.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F952EC71F25334400D6BE60 /* FBSDKLoginKit in Frameworks */,
 				123A9E7E3986150AB25A0B69 /* Pods_LuckyDuck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +97,7 @@
 		2DC1BB136CE6D9DF22CF3531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F952EC61F25334400D6BE60 /* FBSDKLoginKit */,
 				06450579768737B5ACEA96DF /* Pods_LuckyDuck.framework */,
 			);
 			name = Frameworks;
@@ -124,6 +133,7 @@
 		5F8F18151EEB24FF003D2579 /* LuckyDuck */ = {
 			isa = PBXGroup;
 			children = (
+				5FED40901F25930000BF1102 /* LuckyDuck.entitlements */,
 				5F8F18161EEB24FF003D2579 /* AppDelegate.swift */,
 				5F860B3A1F147FD200879345 /* SearchViewController.swift */,
 				5FDAE1891EF0470A008052D6 /* EventCell.swift */,
@@ -135,6 +145,7 @@
 				5F9460F71F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg */,
 				5F9460F51F16FB280047B9E6 /* desktop-hamiltons.jpg */,
 				5F9460FD1F17236E0047B9E6 /* noun_1092684_F38F19.png */,
+				5FED408E1F25764A00BF1102 /* clock.jpg */,
 				5F9460FB1F1721270047B9E6 /* noun_729313_F38F19.png */,
 				5F9460F11F16FB090047B9E6 /* Monarch_Cruise_Ship_uhd.jpg */,
 				5F9460ED1F16E7EF0047B9E6 /* noun_605723_F38F19.png */,
@@ -153,6 +164,7 @@
 				5F39454F1EF8378700FD6649 /* GoogleService-Info.plist */,
 				5F8F18241EEB24FF003D2579 /* Info.plist */,
 				5F860B381F13118400879345 /* InfoViewController.swift */,
+				5F952EC41F252E0900D6BE60 /* Login.swift */,
 			);
 			path = LuckyDuck;
 			sourceTree = "<group>";
@@ -194,6 +206,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5KYX7246HH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -236,6 +253,7 @@
 				5F9460FC1F1721270047B9E6 /* noun_729313_F38F19.png in Resources */,
 				5F9460E81F16E7A10047B9E6 /* noun_975493_F38F19.png in Resources */,
 				5F9460F81F16FD6E0047B9E6 /* nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7.jpg in Resources */,
+				5FED408F1F25764A00BF1102 /* clock.jpg in Resources */,
 				5F9460F61F16FB280047B9E6 /* desktop-hamiltons.jpg in Resources */,
 				5F9461101F17325A0047B9E6 /* longlogo.png in Resources */,
 				5F9461141F17370E0047B9E6 /* favFill.png in Resources */,
@@ -298,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F474E211EF1AB560086F9C4 /* MainPageTableController.swift in Sources */,
+				5F952EC51F252E0900D6BE60 /* Login.swift in Sources */,
 				5F8F181B1EEB24FF003D2579 /* SecondViewController.swift in Sources */,
 				5F860B3B1F147FD200879345 /* SearchViewController.swift in Sources */,
 				5FDAE18C1EF05603008052D6 /* EventTable.swift in Sources */,
@@ -418,6 +437,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"REEXPORTED_FRAMEWORK_NAMES[arch=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -430,8 +450,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5KYX7246HH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+				);
 				INFOPLIST_FILE = LuckyDuck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.boomsauce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -444,8 +479,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5KYX7246HH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+				);
 				INFOPLIST_FILE = LuckyDuck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jimmy.boomsauce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 var mybidnumber = 1
-var totalBidNumber = 388
+var totalBidNumber = 403
 
 class InfoViewController: UIViewController {
     
