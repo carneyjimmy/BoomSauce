@@ -14,6 +14,18 @@ import FirebaseAuth
 
 var selectedName =  ""
 
+/**
+ thoughts:
+ swipe to bid from front
+    -Swipe and then it'll ask and then it'll ask if you want it to ever confirm again
+ 
+ font from mock?
+ shadow on IMAGES
+ ICON PCITURES
+ FAVORITE PICTRE
+ LOGO IMAGE
+ 
+ **/
 
 class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate   {
     
@@ -49,16 +61,17 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            searchTable.delegate = self as! UITableViewDelegate
-            searchTable.dataSource = self as! UITableViewDataSource
-            search.barTintColor = UIColor.clear
+            searchTable.delegate = self as UITableViewDelegate
+            searchTable.dataSource = self as UITableViewDataSource
+            //search.barTintColor = UIColor.orange
+            //search.text = "BLAH BLA"
             configureSearchController()
             //db = FIRDatabase.database().reference()
             getUsernamesKeys()
             //userKey = (UserDefaults.standard.value(forKey: "user_id_taskforce")) as! String
-            let bundlePath = Bundle.main.path(forResource: "desktop-hamiltons", ofType: "jpg")
-            let bundlePath3 = Bundle.main.path(forResource: "Monarch_Cruise_Ship_uhd", ofType: "jpg")
-            let bundlePath2 = Bundle.main.path(forResource: "nbafinals-ftr_12h542qoy90ho1d3dbx5mzgaa7", ofType: "jpg")
+            let bundlePath = Bundle.main.path(forResource: "pineapple-supply-co-208853", ofType: "jpg")
+            let bundlePath3 = Bundle.main.path(forResource: "yolanda-sun-311495", ofType: "jpg")
+            let bundlePath2 = Bundle.main.path(forResource: "neonbrand-308156", ofType: "jpg")
             
             let image = UIImage(contentsOfFile: bundlePath!)!
             let image2 = UIImage(contentsOfFile: bundlePath2!)!
@@ -68,13 +81,15 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             self.imageCache.append(image)
             self.imageCache.append(image2)
             self.imageCache.append(image3)
-
             
-            let imageNav : UIImage = UIImage(named: "logo.png")!
+            
+            let imageNav : UIImage = UIImage(named: "oneTimeLogo.png")!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             imageView.contentMode = .scaleAspectFit
             imageView.image = imageNav
             nav.titleView = imageView
+
+
             
         }
     
@@ -82,7 +97,24 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             searchController = UISearchController(searchResultsController: nil)
             searchController.searchResultsUpdater = self
             searchController.dimsBackgroundDuringPresentation = false
-            searchController.searchBar.placeholder = "Search here..."
+            searchController.searchBar.barTintColor = UIColor.white
+            let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+            
+            
+            
+            textFieldInsideSearchBar?.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 0.8)
+            textFieldInsideSearchBar?.layer.cornerRadius = 10
+            textFieldInsideSearchBar?.clipsToBounds = true
+            
+            searchController.searchBar.layer.borderWidth = 1
+           searchController.searchBar.layer.borderColor = (UIColor.white.cgColor)
+            
+            
+            
+            
+            textFieldInsideSearchBar?.textColor = UIColor.lightGray
+            searchController.searchBar.placeholder = "Search here"
+            
             searchController.searchBar.delegate = self
             searchController.searchBar.sizeToFit()
             searchTable.tableHeaderView = searchController.searchBar
@@ -194,9 +226,19 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         
         myCell.picture.image = imageCache[indexPath.row - 1]
         
+        myCell.picture.layer.cornerRadius = 10
+        myCell.picture.clipsToBounds = true
             
+        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: myCell.picture.frame.size.width, height:  myCell.picture.frame.size.height))
         
-
+        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.1)
+        myCell.picture.addSubview(overlay)
+        
+        myCell.picture.layer.shadowColor = UIColor.darkGray.cgColor
+        myCell.picture.layer.shadowOffset = CGSize(width: 1, height: 1)
+        myCell.picture.layer.shadowOpacity = 1
+        myCell.picture.layer.shadowRadius = 1.0
+            
         return myCell
         }
         
@@ -300,17 +342,17 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if (indexPath.row == 0){
-        return 60.0;//Choose your custom row height}
+        return 45.0;//Choose your custom row height}
         }
             else{
-                return 150.0
+                return 220.0
             }
     }
  
  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return priceArray.count + 1
     }
-    //
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
