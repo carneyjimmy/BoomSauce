@@ -13,6 +13,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 var selectedName =  ""
+var selectedInt = 0
 
 /**
  thoughts:
@@ -26,7 +27,7 @@ var selectedName =  ""
  LOGO IMAGE
  
  **/
-
+       var imageCache = [UIImage]()
 class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate   {
     
 
@@ -52,7 +53,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         var searchController = UISearchController()
     
         var groupName: String = ""
-        var imageCache = [UIImage]()
+ 
         var bannerCache = ["","",""]
         var priceCache = ["","",""]
         var isAdmin: Bool = false
@@ -63,13 +64,14 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             super.viewDidLoad()
             searchTable.delegate = self as UITableViewDelegate
             searchTable.dataSource = self as UITableViewDataSource
-            //search.barTintColor = UIColor.orange
-            //search.text = "BLAH BLA"
+            
+            
             configureSearchController()
-            //db = FIRDatabase.database().reference()
+            
             getUsernamesKeys()
-            //userKey = (UserDefaults.standard.value(forKey: "user_id_taskforce")) as! String
-            let bundlePath = Bundle.main.path(forResource: "pineapple-supply-co-208853", ofType: "jpg")
+            
+           
+            let bundlePath = Bundle.main.path(forResource: "steinar-engeland-182641", ofType: "jpg")
             let bundlePath3 = Bundle.main.path(forResource: "yolanda-sun-311495", ofType: "jpg")
             let bundlePath2 = Bundle.main.path(forResource: "neonbrand-308156", ofType: "jpg")
             
@@ -77,17 +79,20 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             let image2 = UIImage(contentsOfFile: bundlePath2!)!
             let image3 = UIImage(contentsOfFile: bundlePath3!)!
             // Store the image in to our cache
-            getNames()
-            self.imageCache.append(image)
-            self.imageCache.append(image2)
-            self.imageCache.append(image3)
+            
+            imageCache.append(image)
+            imageCache.append(image2)
+            imageCache.append(image3)
             
             
-            let imageNav : UIImage = UIImage(named: "oneTimeLogo.png")!
+            let imageNav : UIImage = UIImage(named: "onetimelogo.png")!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             imageView.contentMode = .scaleAspectFit
             imageView.image = imageNav
             nav.titleView = imageView
+            
+            
+            getNames()
 
 
             
@@ -219,21 +224,28 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             
         }
         else {
+            print(titleArray[indexPath.row - 1] + "jkl")
+            
         let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
         myCell.banner.text = titleArray[indexPath.row - 1]
         print(priceArray[indexPath.row - 1])
         myCell.price.setTitle("$" + String(priceArray[indexPath.row - 1]), for: .normal)
         
+            
+            /* set up image    */
         myCell.picture.image = imageCache[indexPath.row - 1]
         
         myCell.picture.layer.cornerRadius = 10
         myCell.picture.clipsToBounds = true
             
-        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: myCell.picture.frame.size.width, height:  myCell.picture.frame.size.height))
-        
+            
+          /* black overlay  */
+        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: myCell.picture.frame.size.width + 100, height:  myCell.picture.frame.size.height))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.1)
         myCell.picture.addSubview(overlay)
-        
+       
+        /* outline (probs not working )  */
+            
         myCell.picture.layer.shadowColor = UIColor.darkGray.cgColor
         myCell.picture.layer.shadowOffset = CGSize(width: 1, height: 1)
         myCell.picture.layer.shadowOpacity = 1
@@ -282,6 +294,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedName = keyArray[indexPath.row - 1]
+        selectedInt = indexPath.row - 1
         
         
     }

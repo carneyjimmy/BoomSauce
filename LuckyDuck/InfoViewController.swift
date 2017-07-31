@@ -8,19 +8,44 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 var mybidnumber = 1
 var totalBidNumber = 403
 
+
+//grey 
+//all caps
+//search 
+
+//top space and left should be the same
+//descirption a bit more up
+
+//my bids - all caps
+
+//SHAWDOW on bottom - blur (5)
+
+// white top is bigger  than width
+
+//button higher
+//keep height move tall
+
+
 class InfoViewController: UIViewController {
+
     
-    @IBOutlet weak var nav: UINavigationItem!
+    @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var deadlineTag: UILabel!
     @IBOutlet weak var mybids: UIButton!
     @IBOutlet weak var totalBids: UIButton!
     @IBOutlet weak var priceButton: UIButton!
-    @IBOutlet weak var imageview: UIImageView!
+    
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var picture: UIImageView!
+    
+    @IBOutlet weak var favButton: UIButton!
     
    
     var isFull = false
@@ -33,14 +58,14 @@ class InfoViewController: UIViewController {
         
     }
 
-    @IBAction func changeFav(_ sender: Any) {
+/*    @IBAction func changeFav(_ sender: Any) {
         print("here!")
         if (isFull){
             let favimage : UIImage = UIImage(named: "fav.png")!
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = favimage
-            nav.rightBarButtonItem?.customView = imageView
+            let picture = UIpicture(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            picture.contentMode = .scaleAspectFit
+            picture.image = favimage
+     
             
             
             fav.image = favimage
@@ -48,10 +73,10 @@ class InfoViewController: UIViewController {
         }
         else {
             let favimage : UIImage = UIImage(named: "favFill.png")!
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = favimage
-            nav.rightBarButtonItem?.customView = imageView
+            let picture = UIpicture(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            picture.contentMode = .scaleAspectFit
+            picture.image = favimage
+            nav.rightBarButtonItem?.customView = picture
             
             
             fav.image = favimage
@@ -60,29 +85,58 @@ class InfoViewController: UIViewController {
         
         
     }
+    */
     
-    @IBOutlet weak var fav: UIBarButtonItem!
+
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
-        priceButton.layer.cornerRadius = 20; // this value vary as per your desire
+        
+       
+       navbar.leftBarButtonItem?.tintColor = UIColor.white
+        navbar.backBarButtonItem?.tintColor = UIColor.white
+        
+        /*  set up price button */
+        priceButton.layer.cornerRadius = 20;
         priceButton.clipsToBounds = true
-        let favimage : UIImage = UIImage(named: "fav.png")!
+        
+  
+        /* set picture (change to function call) then set overlay */
+        picture.image = imageCache[selectedInt]
+        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: picture.frame.size.width + 100, height:  picture.frame.size.height))
+        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.45)
+        picture.addSubview(overlay)
+        
+        /* set logo at top  */
+        
+        let imageNav : UIImage = UIImage(named: "onetimelogo.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
-        imageView.image = favimage
-        nav.rightBarButtonItem?.customView = imageView
+        imageView.image = imageNav
+        navbar.titleView = imageView
         
         
-        fav.image = favimage
-        getNames()
+        /* set up image for favorte button */
+        let favimage : UIImage = UIImage(named: "bluestar.png")!
+        let star = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        star.contentMode = .scaleAspectFit
+        star.image = favimage
+        favButton.setImage(favimage, for: .normal)
+        favButton.imageView?.contentMode = .scaleAspectFit
+        
+        
+        
+        /*  get the firebase data for labels */
+        getLabels()
         
         // Do any additional setup after loading the view.
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getNames()
+        getLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,10 +161,10 @@ class InfoViewController: UIViewController {
     
         let url = URL(string: imageUrl)
         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        imageview.image = UIImage(data: data!)
+        picture.image = UIImage(data: data!)
     }
     
-    func getNames(){
+    func getLabels(){
         let ref = FIRDatabase.database().reference()
         ref.child("Events/\(selectedName)").observeSingleEvent(of: .value, with: { (snapshot) in
        print("Events/\(selectedName)")
@@ -131,14 +185,23 @@ class InfoViewController: UIViewController {
                 let deadline = value?["deadline"] as? String ?? ""
                
                 
-                self.nav.title = title
+                self.eventName.text = name
                 self.descriptionLabel.text = description
-                self.deadlineTag.text = deadline
+              
                 self.priceButton.setTitle("$" + String(price) + "0", for: UIControlState.normal)
-                self.totalBids.titleLabel?.text = String(totalBidNumber)
+              //  self.totalBids.titleLabel?.text = String(totalBidNumber)
+                
+                /*
+                let longestWordRange = (longString as NSString).rangeOfString(longestWord)
+                
+                let attributedString = NSMutableAttributedString(string: longString, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(20)])
+                
+                attributedString.setAttributes([NSFontAttributeName : UIFont.boldSystemFontOfSize(20), NSForegroundColorAttributeName : UIColor.redColor()], range: longestWordRange)
                 
                 
-                
+                label.attributedText = attributedString
+ 
+ */
                 
             }
         })
