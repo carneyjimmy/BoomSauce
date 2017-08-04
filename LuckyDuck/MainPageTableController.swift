@@ -59,9 +59,15 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         var isAdmin: Bool = false
     
         
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+           
+            self.setNeedsStatusBarAppearanceUpdate()
+            
             searchTable.delegate = self as UITableViewDelegate
             searchTable.dataSource = self as UITableViewDataSource
             
@@ -71,6 +77,9 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             getUsernamesKeys()
             
            
+         //   getPictures()
+            
+            
             let bundlePath = Bundle.main.path(forResource: "steinar-engeland-182641", ofType: "jpg")
             let bundlePath3 = Bundle.main.path(forResource: "yolanda-sun-311495", ofType: "jpg")
             let bundlePath2 = Bundle.main.path(forResource: "neonbrand-308156", ofType: "jpg")
@@ -85,16 +94,18 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             imageCache.append(image3)
             
             
-            let imageNav : UIImage = UIImage(named: "onetimelogo.png")!
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            
+            let navpath = Bundle.main.path(forResource: "onetime", ofType: "png")
+            
+            let imageNav = UIImage(contentsOfFile: navpath!)!
+           
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 35))
             imageView.contentMode = .scaleAspectFit
             imageView.image = imageNav
             nav.titleView = imageView
             
-            
+        
             getNames()
-
-
             
         }
     
@@ -106,7 +117,14 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
             
             
-            
+            /*    custom image if works
+             
+             
+             
+            let searchimage : UIImage = UIImage(named: "search.png")!
+            searchController.searchBar.backgroundImage = searchimage
+            searchController.searchBar.image(for: .search, state: .normal)
+            */
             textFieldInsideSearchBar?.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 0.8)
             textFieldInsideSearchBar?.layer.cornerRadius = 10
             textFieldInsideSearchBar?.clipsToBounds = true
@@ -229,12 +247,13 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         let myCell = self.searchTable.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
         myCell.banner.text = titleArray[indexPath.row - 1]
         print(priceArray[indexPath.row - 1])
-        myCell.price.setTitle("$" + String(priceArray[indexPath.row - 1]), for: .normal)
+        myCell.price.text  = ("$" + String(priceArray[indexPath.row - 1]))
         
             
-            /* set up image    */
+            /* set up picture    */
         myCell.picture.image = imageCache[indexPath.row - 1]
         
+            /*curve corner */
         myCell.picture.layer.cornerRadius = 10
         myCell.picture.clipsToBounds = true
             
@@ -250,6 +269,22 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         myCell.picture.layer.shadowOffset = CGSize(width: 1, height: 1)
         myCell.picture.layer.shadowOpacity = 1
         myCell.picture.layer.shadowRadius = 1.0
+            
+        myCell.picture.layer.shouldRasterize = true
+        myCell.picture.layer.rasterizationScale = true ? UIScreen.main.scale : 1
+            
+            /*
+            myCell.picture.layer.masksToBounds = false
+            myCell.picture.layer.shadowColor = UIColor.black.cgColor
+            myCell.picture.layer.shadowOpacity = 0.5
+           myCell.picture.layer.shadowOffset = CGSize(width: -1, height: 1)
+            myCell.picture.layer.shadowRadius = 1
+            
+             
+             */
+            
+            myCell.picture.layer.shadowPath = UIBezierPath(rect: myCell.picture.bounds).cgPath
+          
             
         return myCell
         }

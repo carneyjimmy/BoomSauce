@@ -15,8 +15,9 @@ class EventCell: UITableViewCell {
     
     @IBOutlet weak var banner: UILabel!
    
+    @IBOutlet weak var price: UILabel!
     
-    @IBOutlet weak var price: UIButton!
+    
     @IBOutlet weak var picture: UIImageView!
     
     

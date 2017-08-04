@@ -94,9 +94,9 @@ class InfoViewController: UIViewController {
         
         super.viewDidLoad()
         
-       
-       navbar.leftBarButtonItem?.tintColor = UIColor.white
-        navbar.backBarButtonItem?.tintColor = UIColor.white
+        /* back burron color */
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         
         /*  set up price button */
         priceButton.layer.cornerRadius = 20;
@@ -104,36 +104,9 @@ class InfoViewController: UIViewController {
         
   
         /* set picture (change to function call) then set overlay */
-        picture.image = imageCache[selectedInt]
-        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: picture.frame.size.width + 100, height:  picture.frame.size.height))
-        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.45)
-        picture.addSubview(overlay)
+        getPicture()
         
-        /* set logo at top  */
-        
-        let imageNav : UIImage = UIImage(named: "onetimelogo.png")!
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = imageNav
-        navbar.titleView = imageView
-        
-        
-        /* set up image for favorte button */
-        let favimage : UIImage = UIImage(named: "bluestar.png")!
-        let star = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        star.contentMode = .scaleAspectFit
-        star.image = favimage
-        favButton.setImage(favimage, for: .normal)
-        favButton.imageView?.contentMode = .scaleAspectFit
-        
-        
-        
-        /*  get the firebase data for labels */
-        getLabels()
-        
-        // Do any additional setup after loading the view.
-        
-    }
+           }
     
     override func viewWillAppear(_ animated: Bool) {
         getLabels()
@@ -156,13 +129,57 @@ class InfoViewController: UIViewController {
                 let value = snapshot.value as? NSDictionary
                 
                 let imageurl = value?["Image"] as? String ?? ""
+                self.callback(imageurl: imageurl)
             }
         })
     
-        let url = URL(string: imageUrl)
+        
+    }
+    
+    func callback (imageurl: String) {
+        let url = URL(string: imageurl)
         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
         picture.image = UIImage(data: data!)
+        
+        
+        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: picture.frame.size.width + 100, height:  picture.frame.size.height))
+        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.45)
+        picture.addSubview(overlay)
+        
+        /* set logo at top  */
+        
+        let imageNav : UIImage = UIImage(named: "onetime.png")!
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = imageNav
+        navbar.titleView = imageView
+        
+        
+        /* set up image for favorte button */
+        let favimage : UIImage = UIImage(named: "bluestar.png")!
+        let star = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        star.contentMode = .scaleAspectFit
+        star.image = favimage
+        favButton.setImage(favimage, for: .normal)
+        favButton.imageView?.contentMode = .scaleAspectFit
+        
+        
+        
+        picture.layer.shadowColor = UIColor.darkGray.cgColor
+        picture.layer.shadowOffset = CGSize(width: 1, height: 1)
+        picture.layer.shadowOpacity = 1
+        picture.layer.shadowRadius = 1.0
+        
+        picture.layer.shouldRasterize = true
+        picture.layer.rasterizationScale = true ? UIScreen.main.scale : 1
+        /*  get the firebase data for labels */
+        getLabels()
+        
+        // Do any additional setup after loading the view.
+        
+
     }
+    
     
     func getLabels(){
         let ref = FIRDatabase.database().reference()
