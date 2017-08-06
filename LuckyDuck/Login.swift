@@ -42,11 +42,20 @@ class Login: UIViewController{
                 if error != nil {
                     
                 }
+                let accessToken = FBSDKAccessToken.current()
+                let credentials = FIRFacebookAuthProvider.credential(withAccessToken: (accessToken?.tokenString)!)
+                
+                FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+                    if  error != nil {
+                        return
+                    }
+                    
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
         
            
+                })
+            }
         }
-    }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         //nothing yet

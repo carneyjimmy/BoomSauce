@@ -326,9 +326,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-Qu-qRA">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-Qu-qRA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations, you won" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-fD-5P3">
                                 <rect key="frame" x="58" y="64" width="259" height="94"/>
@@ -370,8 +369,12 @@
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="GYQ-Gw-vrL"/>
                             <constraint firstItem="fyz-Wp-ahj" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="QMV-H1-Nae"/>
                             <constraint firstItem="fyz-Wp-ahj" firstAttribute="top" secondItem="SQJ-fD-5P3" secondAttribute="bottom" constant="8" id="Ugp-i1-H5U"/>
+                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="leading" secondItem="hie-Xh-J5k" secondAttribute="leading" id="WGX-lq-D72"/>
+                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="top" secondItem="hie-Xh-J5k" secondAttribute="top" id="dOT-El-jUk"/>
                             <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="Mba-gB-Kf0" secondAttribute="bottom" constant="83" id="hjC-5N-7q2"/>
+                            <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="4Lx-Qu-qRA" secondAttribute="bottom" id="nPa-vJ-Rn1"/>
                             <constraint firstItem="Mba-gB-Kf0" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="o5Q-i3-uiQ"/>
+                            <constraint firstAttribute="trailing" secondItem="4Lx-Qu-qRA" secondAttribute="trailing" id="p1g-Md-9bQ"/>
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="top" secondItem="s3l-aF-AGW" secondAttribute="bottom" constant="44" id="uz9-gm-hWg"/>
                         </constraints>
                     </view>
@@ -403,9 +406,11 @@
                                     <constraint firstAttribute="width" constant="75" id="FzK-Dr-BwE"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-cz-Nre">
-                                <rect key="frame" x="39" y="306" width="303" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-cz-Nre">
+                                <rect key="frame" x="40.5" y="311" width="294" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="YoE-ot-eAh"/>
+                                </constraints>
                                 <state key="normal" title="Button" backgroundImage="fbbutton.png"/>
                                 <connections>
                                     <action selector="fbClick:" destination="daY-G9-WSY" eventType="touchUpInside" id="7aP-NR-hIU"/>
@@ -414,8 +419,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qJC-cz-Nre" firstAttribute="centerY" secondItem="FNr-Xy-2Tt" secondAttribute="centerY" id="DG7-Xw-grX"/>
                             <constraint firstItem="anR-b1-cAM" firstAttribute="top" secondItem="imf-WV-Byz" secondAttribute="bottom" constant="34" id="SXh-cN-FBs"/>
                             <constraint firstItem="anR-b1-cAM" firstAttribute="centerX" secondItem="FNr-Xy-2Tt" secondAttribute="centerX" id="aFB-aU-RSV"/>
+                            <constraint firstItem="qJC-cz-Nre" firstAttribute="centerX" secondItem="FNr-Xy-2Tt" secondAttribute="centerX" id="hwh-yq-5ww"/>
                         </constraints>
                     </view>
                     <connections>
@@ -476,19 +483,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-AP-6TS">
-                                            <rect key="frame" x="0.0" y="1" width="76" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                            <state key="normal" title="All">
-                                                <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
                                         <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-G4-1oe">
                                             <rect key="frame" x="76" y="1" width="70" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Events">
+                                            <state key="normal" title="EVENTS">
                                                 <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
@@ -496,7 +495,7 @@
                                             <rect key="frame" x="154" y="2" width="76" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Food">
+                                            <state key="normal" title="FOOD">
                                                 <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
@@ -504,7 +503,7 @@
                                             <rect key="frame" x="238" y="2" width="70" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Trips">
+                                            <state key="normal" title="TRIPS">
                                                 <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
@@ -512,7 +511,15 @@
                                             <rect key="frame" x="316" y="2" width="89" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Lessons">
+                                            <state key="normal" title="LESSONS">
+                                                <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-AP-6TS">
+                                            <rect key="frame" x="0.0" y="1" width="76" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                            <state key="normal" title="ALL">
                                                 <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
