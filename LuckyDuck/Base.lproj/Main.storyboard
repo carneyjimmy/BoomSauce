@@ -155,7 +155,7 @@
                                     <constraint firstAttribute="width" secondItem="xbX-i5-9d4" secondAttribute="height" multiplier="1:1" id="fcA-7R-pLW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="73"/>
-                                <state key="normal" title="$5" backgroundImage="Ellipse 3.png">
+                                <state key="normal" title="$5" backgroundImage="blueCircle.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -327,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-Qu-qRA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="787"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations, you won" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-fD-5P3">
                                 <rect key="frame" x="58" y="64" width="259" height="94"/>
@@ -346,7 +346,7 @@
                                     <constraint firstAttribute="width" constant="259" id="8yK-II-Mhq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="CLAIM MY WIN" backgroundImage="bidButton.png">
+                                <state key="normal" backgroundImage="bidButton.png">
                                     <color key="titleColor" red="0.99534488341968907" green="0.99534488341968907" blue="0.99534488341968907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -367,15 +367,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="GYQ-Gw-vrL"/>
+                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="top" secondItem="hie-Xh-J5k" secondAttribute="top" id="OHN-DU-qpg"/>
                             <constraint firstItem="fyz-Wp-ahj" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="QMV-H1-Nae"/>
                             <constraint firstItem="fyz-Wp-ahj" firstAttribute="top" secondItem="SQJ-fD-5P3" secondAttribute="bottom" constant="8" id="Ugp-i1-H5U"/>
-                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="leading" secondItem="hie-Xh-J5k" secondAttribute="leading" id="WGX-lq-D72"/>
-                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="top" secondItem="hie-Xh-J5k" secondAttribute="top" id="dOT-El-jUk"/>
                             <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="Mba-gB-Kf0" secondAttribute="bottom" constant="83" id="hjC-5N-7q2"/>
-                            <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="4Lx-Qu-qRA" secondAttribute="bottom" id="nPa-vJ-Rn1"/>
+                            <constraint firstItem="4Lx-Qu-qRA" firstAttribute="leading" secondItem="hie-Xh-J5k" secondAttribute="leading" id="jwe-rn-ZNu"/>
+                            <constraint firstAttribute="trailing" secondItem="4Lx-Qu-qRA" secondAttribute="trailing" id="k5p-EG-c1P"/>
                             <constraint firstItem="Mba-gB-Kf0" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="o5Q-i3-uiQ"/>
-                            <constraint firstAttribute="trailing" secondItem="4Lx-Qu-qRA" secondAttribute="trailing" id="p1g-Md-9bQ"/>
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="top" secondItem="s3l-aF-AGW" secondAttribute="bottom" constant="44" id="uz9-gm-hWg"/>
+                            <constraint firstAttribute="bottom" secondItem="4Lx-Qu-qRA" secondAttribute="bottom" constant="-120" id="vHc-jt-p2U"/>
                         </constraints>
                     </view>
                     <connections>
@@ -534,7 +534,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Monarch_Cruise_Ship_uhd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="I8p-oR-2Qq">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I8p-oR-2Qq">
                                             <rect key="frame" x="15" y="8" width="345" height="180"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -894,7 +894,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Monarch_Cruise_Ship_uhd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0GB-xX-IrK">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0GB-xX-IrK">
                                             <rect key="frame" x="15" y="8" width="345" height="180"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1036,7 +1036,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Monarch_Cruise_Ship_uhd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-pj-OCI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-pj-OCI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1089,9 +1089,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ellipse 3.png" width="146" height="146"/>
-        <image name="Monarch_Cruise_Ship_uhd.jpg" width="3840" height="2160"/>
-        <image name="bidButton.png" width="217" height="53"/>
+        <image name="bidButton.png" width="235" height="50"/>
+        <image name="blueCircle.png" width="146" height="146"/>
         <image name="bluestar.png" width="26" height="25"/>
         <image name="fbbutton.png" width="294" height="44"/>
         <image name="first" width="30" height="30"/>
