@@ -17,6 +17,7 @@
 		102DCA431F378CCB003D386F /* blueStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 102DCA391F378CCB003D386F /* blueStar.png */; };
 		102DCA441F378CCB003D386F /* blueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 102DCA3A1F378CCB003D386F /* blueCircle.png */; };
 		102DCA451F378CCB003D386F /* bidButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 102DCA3B1F378CCB003D386F /* bidButton.png */; };
+		102DCA471F3790B2003D386F /* ha.png in Resources */ = {isa = PBXBuildFile; fileRef = 102DCA461F3790B2003D386F /* ha.png */; };
 		108DFA9F1F3629C100798E9F /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFA9E1F3629C100798E9F /* WishListController.swift */; };
 		108DFAA11F36429D00798E9F /* WinPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFAA01F36429D00798E9F /* WinPageViewController.swift */; };
 		108DFAA31F3652EF00798E9F /* ClaimWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFAA21F3652EF00798E9F /* ClaimWinViewController.swift */; };
@@ -50,6 +51,7 @@
 		102DCA391F378CCB003D386F /* blueStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueStar.png; sourceTree = "<group>"; };
 		102DCA3A1F378CCB003D386F /* blueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueCircle.png; sourceTree = "<group>"; };
 		102DCA3B1F378CCB003D386F /* bidButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bidButton.png; sourceTree = "<group>"; };
+		102DCA461F3790B2003D386F /* ha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ha.png; sourceTree = "<group>"; };
 		108DFA9E1F3629C100798E9F /* WishListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		108DFAA01F36429D00798E9F /* WinPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinPageViewController.swift; sourceTree = "<group>"; };
 		108DFAA21F3652EF00798E9F /* ClaimWinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimWinViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		108DFA9D1F36222A00798E9F /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				102DCA461F3790B2003D386F /* ha.png */,
 				102DCA321F378CCB003D386F /* winIcon.png */,
 				102DCA331F378CCB003D386F /* whitebackground.png */,
 				102DCA341F378CCB003D386F /* splash.png */,
@@ -241,6 +244,7 @@
 				5F8F18231EEB24FF003D2579 /* LaunchScreen.storyboard in Resources */,
 				102DCA3E1F378CCB003D386F /* splash.png in Resources */,
 				102DCA441F378CCB003D386F /* blueCircle.png in Resources */,
+				102DCA471F3790B2003D386F /* ha.png in Resources */,
 				5F8F18201EEB24FF003D2579 /* Assets.xcassets in Resources */,
 				102DCA431F378CCB003D386F /* blueStar.png in Resources */,
 				5F8F181E1EEB24FF003D2579 /* Main.storyboard in Resources */,
