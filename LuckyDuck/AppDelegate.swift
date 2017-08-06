@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
- 
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().barStyle = .blackOpaque
         FIRApp.configure()
         //let storage = FIRStorage.storage()
         return true

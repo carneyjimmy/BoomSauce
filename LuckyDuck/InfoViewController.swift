@@ -37,10 +37,8 @@ class InfoViewController: UIViewController {
     
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var deadlineTag: UILabel!
-    @IBOutlet weak var mybids: UIButton!
-    @IBOutlet weak var totalBids: UIButton!
-    @IBOutlet weak var priceButton: UIButton!
+    
+
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var picture: UIImageView!
@@ -50,13 +48,7 @@ class InfoViewController: UIViewController {
    
     var isFull = false
 
-    @IBAction func bidButtonClicked(_ sender: Any) {
-        mybidnumber += 1
-        totalBidNumber += 1
-        totalBids.setTitle(String(totalBidNumber), for: UIControlState.normal)
-        mybids.setTitle(String(mybidnumber), for: UIControlState.normal)
-        
-    }
+
 
 /*    @IBAction func changeFav(_ sender: Any) {
         print("here!")
@@ -98,9 +90,7 @@ class InfoViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         
-        /*  set up price button */
-        priceButton.layer.cornerRadius = 20;
-        priceButton.clipsToBounds = true
+     
         
   
         /* set picture (change to function call) then set overlay */
@@ -137,11 +127,10 @@ class InfoViewController: UIViewController {
     }
     
     func callback (imageurl: String) {
-        let url = URL(string: imageurl)
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        picture.image = UIImage(data: data!)
         
+        picture.image = imageCache[selectedInt]
         
+        /* set black overlay */
         let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: picture.frame.size.width + 100, height:  picture.frame.size.height))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.45)
         picture.addSubview(overlay)
@@ -164,7 +153,7 @@ class InfoViewController: UIViewController {
         favButton.imageView?.contentMode = .scaleAspectFit
         
         
-        
+        /* make image 'pop' with shadow */
         picture.layer.shadowColor = UIColor.darkGray.cgColor
         picture.layer.shadowOffset = CGSize(width: 1, height: 1)
         picture.layer.shadowOpacity = 1
@@ -172,6 +161,7 @@ class InfoViewController: UIViewController {
         
         picture.layer.shouldRasterize = true
         picture.layer.rasterizationScale = true ? UIScreen.main.scale : 1
+        
         /*  get the firebase data for labels */
         getLabels()
         
@@ -205,7 +195,7 @@ class InfoViewController: UIViewController {
                 self.eventName.text = name
                 self.descriptionLabel.text = description
               
-                self.priceButton.setTitle("$" + String(price) + "0", for: UIControlState.normal)
+               // self.priceButton.setTitle("$" + String(price) + "0", for: UIControlState.normal)
               //  self.totalBids.titleLabel?.text = String(totalBidNumber)
                 
                 /*

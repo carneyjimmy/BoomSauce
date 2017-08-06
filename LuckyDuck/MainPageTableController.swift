@@ -14,7 +14,7 @@ import FirebaseAuth
 
 var selectedName =  ""
 var selectedInt = 0
-
+var keyArray = [String]()
 /**
  thoughts:
  swipe to bid from front
@@ -31,6 +31,7 @@ var selectedInt = 0
 class MainPageTableController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate   {
     
 
+    
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet var searchTable: UITableView!
     
@@ -41,7 +42,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         var userKey: String = ""
         var titleArray = [String]()
         var priceArray = [Int]()
-        var keyArray = [String]()
+
         var inGroupArray = [Bool]()
         var db: FIRDatabaseReference!
         var filteredUsername = [String]()
@@ -65,38 +66,33 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         override func viewDidLoad() {
             super.viewDidLoad()
             
-           
+            /* make sure service bar is white */
             self.setNeedsStatusBarAppearanceUpdate()
+            
+            /* 
+             *
+             set up search bar 
+             *
+             */
             
             searchTable.delegate = self as UITableViewDelegate
             searchTable.dataSource = self as UITableViewDataSource
-            
-            
             configureSearchController()
             
+            /*
+             *
+             get user
+             *
+             */
             getUsernamesKeys()
             
-           
-         //   getPictures()
             
-            
-            let bundlePath = Bundle.main.path(forResource: "steinar-engeland-182641", ofType: "jpg")
-            let bundlePath3 = Bundle.main.path(forResource: "yolanda-sun-311495", ofType: "jpg")
-            let bundlePath2 = Bundle.main.path(forResource: "neonbrand-308156", ofType: "jpg")
-            
-            let image = UIImage(contentsOfFile: bundlePath!)!
-            let image2 = UIImage(contentsOfFile: bundlePath2!)!
-            let image3 = UIImage(contentsOfFile: bundlePath3!)!
-            // Store the image in to our cache
-            
-            imageCache.append(image)
-            imageCache.append(image2)
-            imageCache.append(image3)
-            
-            
-            
+            /*
+             *
+             logo
+             *
+             */
             let navpath = Bundle.main.path(forResource: "onetime", ofType: "png")
-            
             let imageNav = UIImage(contentsOfFile: navpath!)!
            
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 35))
@@ -105,7 +101,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
             nav.titleView = imageView
             
         
-            getNames()
+            getInfo()
             
         }
     
@@ -232,7 +228,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         
     }
     
-     var pickerData = ["All", "Featured", "Sports", "Getaways", "lessons", "Food"]
+     var pickerData = ["ALL", "FEATURED", "SPORTS", "GETAWAYS", "LESSONS", "FOOD"]
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -262,8 +258,9 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: myCell.picture.frame.size.width + 100, height:  myCell.picture.frame.size.height))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.1)
         myCell.picture.addSubview(overlay)
+            
        
-        /* outline (probs not working )  */
+        /* outline / shadow  */
             
         myCell.picture.layer.shadowColor = UIColor.darkGray.cgColor
         myCell.picture.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -290,15 +287,17 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         }
         
     }
-    func getNames(){
+    func getInfo(){
         let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/Events/")
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in
             
             if let _ = snapshot.value as? NSNull {
                 return
-            } else {
-                self.keyArray.append(snapshot.key)
-                print(self.keyArray)
+            }
+            else {
+                
+                keyArray.append(snapshot.key)
+                
                 
                 
                 
@@ -319,6 +318,13 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
                         
                         
                     }
+                    if (rest.key == "Image"){
+                        let url = URL(string: rest.value as! String)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        imageCache.append(UIImage(data: data!)!)
+
+                      
+                    }
                 }
                 
                 
@@ -333,60 +339,7 @@ class MainPageTableController: UITableViewController, UISearchResultsUpdating, U
         
         
     }
-    /*
-    func addPicture(key: [String], indexPath: Int, myCell: EventCell){
-        var urlString: String = ""
-        let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/users/\(key[indexPath])")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                return
-            } else {
-                let enumerator = snapshot.children
-                while let rest = enumerator.nextObject() as? FIRDataSnapshot {
-                    if (rest.key == "imageURL"){
-                        urlString = rest.value! as! String
-                        print(urlString)
-                        let url = NSURL(string: urlString)
-                        
-                        //myCell.setImage(profile: UIImage(named: "blank")!)
-                        
-                        // If this image is already cached, don't re-download
-                        if let img = self.imageCache[urlString] {
-                            myCell.setImage(profile: img)
-                        }
-                            
-                        else {
-                            // The image isn't cached, download the img data
-                            // We should perform this in a background thread
-                            let session = URLSession.shared
-                            let request = NSURLRequest(url: url! as URL)
-                            let dataTask = session.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) -> Void in
-                                if error == nil {
-                                    // Convert the downloaded data in to a UIImage object
-                                    let image = UIImage(data: data!)
-                                    // Store the image in to our cache
-                                    self.imageCache[urlString] = image
-                                    // Update the cell
-                                    DispatchQueue.main.async(execute: {
-                                        myCell.setImage(profile: image!)
-                                    })
-                                }
-                                else {
-                                    print("Error: \(String(describing: error?.localizedDescription))")
-                                }
-                            }
-                            dataTask.resume()
-                        }
-                    }
-                }
-            }
-        });
- 
-       
- 
-    }
- */
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if (indexPath.row == 0){
