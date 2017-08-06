@@ -132,7 +132,7 @@ class InfoViewController: UIViewController {
         
         /* set black overlay */
         let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: picture.frame.size.width + 100, height:  picture.frame.size.height))
-        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.45)
+        overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.35)
         picture.addSubview(overlay)
         
         /* set logo at top  */
