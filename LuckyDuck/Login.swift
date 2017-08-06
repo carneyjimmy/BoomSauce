@@ -10,32 +10,42 @@
 import Foundation
 import UIKit
 import FBSDKLoginKit
+import FirebaseDatabase
+import FirebaseAuth
 
 
 
 import Firebase
 
 
-class Login: UIViewController, FBSDKLoginButtonDelegate{
+class Login: UIViewController{
     
     var db: FIRDatabaseReference!
     
+   
+    @IBOutlet weak var fbCustom: UIButton!
 
     override func viewDidLoad() {
-    
-            let loginButton = FBSDKLoginButton()
-        
-        
-            
-            view.addSubview(loginButton)
-        
-        loginButton.frame = CGRect(x: 16, y: 40, width: view.frame.width - 32, height: 50)
+    super.viewDidLoad()
+       
         
     
-    
-        loginButton.delegate = self
-        loginButton.readPermissions = ["email", "public_profile"]
 
+    }
+    
+    @IBAction func fbClick(_ sender: Any) {
+        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result , err) in
+            if err != nil {
+                return
+            }
+            FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+                if error != nil {
+                    
+                }
+                self.performSegue(withIdentifier: "loginSegue", sender: self)
+        
+           
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -46,13 +56,10 @@ class Login: UIViewController, FBSDKLoginButtonDelegate{
         if error != nil {
             print (error)
         }
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-            if error != nil {
-                
-                }
+
             print(result)
         }
-        performSegue(withIdentifier: "loginSegue", sender: self)
+        
     }
 
 

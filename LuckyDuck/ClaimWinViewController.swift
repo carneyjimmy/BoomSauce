@@ -20,6 +20,11 @@ class ClaimWinViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         let ref = FIRDatabase.database().reference()
         ref.child("Events/\(self.id)").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -40,15 +45,11 @@ class ClaimWinViewController: UIViewController {
                 self.picture.addSubview(overlay)
                 
                 self.titleLabel.text = value?["Name"] as? String ?? ""
-
+                
                 
                 
             }
         });
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
       /*
         let ref = FIRDatabase.database().reference(fromURL: "https://temptitle-5df50.firebaseio.com/Events/\(id)/Image")
         ref.queryOrderedByKey().observe(.childAdded, with: { snapshot in

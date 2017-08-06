@@ -14,6 +14,10 @@
 		108DFAA11F36429D00798E9F /* WinPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFAA01F36429D00798E9F /* WinPageViewController.swift */; };
 		108DFAA31F3652EF00798E9F /* ClaimWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFAA21F3652EF00798E9F /* ClaimWinViewController.swift */; };
 		108DFAA51F36955600798E9F /* goldWinIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 108DFAA41F36955600798E9F /* goldWinIcon.png */; };
+		108DFAA71F36A4E900798E9F /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108DFAA61F36A4E900798E9F /* FormView.swift */; };
+		108DFAA91F36A54400798E9F /* ha.png in Resources */ = {isa = PBXBuildFile; fileRef = 108DFAA81F36A54400798E9F /* ha.png */; };
+		108DFAAB1F36AD9800798E9F /* loginLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 108DFAAA1F36AD9800798E9F /* loginLogo.png */; };
+		108DFAAD1F36AF9100798E9F /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 108DFAAC1F36AF9100798E9F /* fbbutton.png */; };
 		10B502411F2AC4E900C6246C /* blueCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B502401F2AC4E900C6246C /* blueCircle.png */; };
 		10B502431F2AC74800C6246C /* whitebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B502421F2AC74800C6246C /* whitebackground.png */; };
 		10B502451F2ACCBF00C6246C /* bluestar.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B502441F2ACCBF00C6246C /* bluestar.png */; };
@@ -51,6 +55,10 @@
 		108DFAA01F36429D00798E9F /* WinPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinPageViewController.swift; sourceTree = "<group>"; };
 		108DFAA21F3652EF00798E9F /* ClaimWinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimWinViewController.swift; sourceTree = "<group>"; };
 		108DFAA41F36955600798E9F /* goldWinIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldWinIcon.png; path = ../../Documents/goldWinIcon.png; sourceTree = "<group>"; };
+		108DFAA61F36A4E900798E9F /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		108DFAA81F36A54400798E9F /* ha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ha.png; path = ../../Desktop/ha.png; sourceTree = "<group>"; };
+		108DFAAA1F36AD9800798E9F /* loginLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginLogo.png; path = ../../Documents/loginLogo.png; sourceTree = "<group>"; };
+		108DFAAC1F36AF9100798E9F /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbbutton.png; path = ../../Downloads/fbbutton.png; sourceTree = "<group>"; };
 		10B502401F2AC4E900C6246C /* blueCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueCircle.png; path = ../../Documents/blueCircle.png; sourceTree = "<group>"; };
 		10B502421F2AC74800C6246C /* whitebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whitebackground.png; path = ../../Documents/whitebackground.png; sourceTree = "<group>"; };
 		10B502441F2ACCBF00C6246C /* bluestar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluestar.png; path = ../../Documents/bluestar.png; sourceTree = "<group>"; };
@@ -99,6 +107,9 @@
 		108DFA9D1F36222A00798E9F /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				108DFAAA1F36AD9800798E9F /* loginLogo.png */,
+				108DFAAC1F36AF9100798E9F /* fbbutton.png */,
+				108DFAA81F36A54400798E9F /* ha.png */,
 				108DFAA41F36955600798E9F /* goldWinIcon.png */,
 				10B502441F2ACCBF00C6246C /* bluestar.png */,
 				10B5024F1F31519300C6246C /* onetimelogo.png */,
@@ -161,6 +172,7 @@
 				5F8F181C1EEB24FF003D2579 /* Main.storyboard */,
 				5F8F18161EEB24FF003D2579 /* AppDelegate.swift */,
 				5F952EC41F252E0900D6BE60 /* Login.swift */,
+				108DFAA61F36A4E900798E9F /* FormView.swift */,
 				5F474E201EF1AB560086F9C4 /* MainPageTableController.swift */,
 				5F860B381F13118400879345 /* InfoViewController.swift */,
 				108DFA9E1F3629C100798E9F /* WishListController.swift */,
@@ -249,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8F18231EEB24FF003D2579 /* LaunchScreen.storyboard in Resources */,
+				108DFAAD1F36AF9100798E9F /* fbbutton.png in Resources */,
 				5F9461061F1728800047B9E6 /* white4.png in Resources */,
 				5F8F18201EEB24FF003D2579 /* Assets.xcassets in Resources */,
 				108DFAA51F36955600798E9F /* goldWinIcon.png in Resources */,
@@ -258,6 +271,7 @@
 				10B5025B1F315FDA00C6246C /* search.png in Resources */,
 				10B5025D1F3166EF00C6246C /* search.tiff in Resources */,
 				5F3945501EF8378700FD6649 /* GoogleService-Info.plist in Resources */,
+				108DFAA91F36A54400798E9F /* ha.png in Resources */,
 				10B502501F31519300C6246C /* onetimelogo.png in Resources */,
 				10B502431F2AC74800C6246C /* whitebackground.png in Resources */,
 				10B502451F2ACCBF00C6246C /* bluestar.png in Resources */,
@@ -265,6 +279,7 @@
 				108DFA981F354C5700798E9F /* Ellipse 3.png in Resources */,
 				10B502591F315A6A00C6246C /* onetime.png in Resources */,
 				10B502491F2AE8A900C6246C /* bidButton.png in Resources */,
+				108DFAAB1F36AD9800798E9F /* loginLogo.png in Resources */,
 				108DFA9A1F354D1800798E9F /* winIcon.png in Resources */,
 				10B502411F2AC4E900C6246C /* blueCircle.png in Resources */,
 			);
@@ -325,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108DFAA71F36A4E900798E9F /* FormView.swift in Sources */,
 				108DFAA11F36429D00798E9F /* WinPageViewController.swift in Sources */,
 				5F474E211EF1AB560086F9C4 /* MainPageTableController.swift in Sources */,
 				5F952EC51F252E0900D6BE60 /* Login.swift in Sources */,

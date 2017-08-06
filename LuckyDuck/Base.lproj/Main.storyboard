@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="daY-G9-WSY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -265,6 +265,13 @@
                     <view key="view" contentMode="scaleToFill" id="0Cp-A6-8t0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbL-Es-X7o">
+                                <rect key="frame" x="51" y="142" width="273" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ebl-mI-12o"/>
@@ -277,7 +284,7 @@
         <scene sceneID="FL3-0i-f6i">
             <objects>
                 <navigationController id="n2S-4c-Ya4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wins" badgeValue="3" selectedImage="goldWinIcon.png" id="wlM-yP-l0m">
+                    <tabBarItem key="tabBarItem" title="Wins" image="goldWinIcon.png" badgeValue="3" selectedImage="goldWinIcon.png" id="wlM-yP-l0m">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mys-hf-V3a">
@@ -298,8 +305,8 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZVu-J4-bTY" customClass="WinPageViewController" customModule="LuckyDuck" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="isM-9f-3ty">
-                        <barButtonItem key="rightBarButtonItem" image="winIcon.png" style="plain" id="g0b-l1-gWW">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="g0b-l1-gWW">
+                            <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                 </pageViewController>
@@ -333,44 +340,38 @@
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Tickets to Hamilton" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyz-Wp-ahj">
-                                <rect key="frame" x="120" y="150" width="135" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="HIz-hT-d6C"/>
-                                    <constraint firstAttribute="width" constant="135" id="M5d-BE-iHR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-qU-byw">
-                                <rect key="frame" x="168" y="592" width="39" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="DFI-oo-W6Z"/>
-                                    <constraint firstAttribute="width" constant="39" id="rsK-k7-h1D"/>
-                                </constraints>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mba-gB-Kf0">
                                 <rect key="frame" x="58" y="529" width="259" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="KMz-v3-x6q"/>
-                                    <constraint firstAttribute="width" constant="259" id="Rcf-RY-6S0"/>
+                                    <constraint firstAttribute="height" constant="55" id="5KD-8U-uXR"/>
+                                    <constraint firstAttribute="width" constant="259" id="8yK-II-Mhq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="CLAIM MY WIN" backgroundImage="bidButton.png">
                                     <color key="titleColor" red="0.99534488341968907" green="0.99534488341968907" blue="0.99534488341968907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zje-zc-6xS" kind="show" id="h0z-xM-a54"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Tickets to Hamilton" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyz-Wp-ahj">
+                                <rect key="frame" x="58" y="166" width="259" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="GF1-kk-cK9"/>
+                                    <constraint firstAttribute="height" constant="62" id="NiK-8E-JJy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fyz-Wp-ahj" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="AAa-Bx-Wmc"/>
-                            <constraint firstItem="fyz-Wp-ahj" firstAttribute="top" secondItem="s3l-aF-AGW" secondAttribute="bottom" constant="130" id="EMO-Em-50W"/>
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="GYQ-Gw-vrL"/>
-                            <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="oQe-qU-byw" secondAttribute="bottom" constant="38" id="NIR-IJ-fGM"/>
-                            <constraint firstItem="oQe-qU-byw" firstAttribute="top" secondItem="Mba-gB-Kf0" secondAttribute="bottom" constant="8" id="QG1-HO-idX"/>
-                            <constraint firstItem="oQe-qU-byw" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="oQz-mD-Xlt"/>
-                            <constraint firstItem="Mba-gB-Kf0" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="pxe-w6-6ja"/>
+                            <constraint firstItem="fyz-Wp-ahj" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="QMV-H1-Nae"/>
+                            <constraint firstItem="fyz-Wp-ahj" firstAttribute="top" secondItem="SQJ-fD-5P3" secondAttribute="bottom" constant="8" id="Ugp-i1-H5U"/>
+                            <constraint firstItem="nL4-Vz-ovX" firstAttribute="top" secondItem="Mba-gB-Kf0" secondAttribute="bottom" constant="83" id="hjC-5N-7q2"/>
+                            <constraint firstItem="Mba-gB-Kf0" firstAttribute="centerX" secondItem="hie-Xh-J5k" secondAttribute="centerX" id="o5Q-i3-uiQ"/>
                             <constraint firstItem="SQJ-fD-5P3" firstAttribute="top" secondItem="s3l-aF-AGW" secondAttribute="bottom" constant="44" id="uz9-gm-hWg"/>
                         </constraints>
                     </view>
@@ -394,15 +395,37 @@
                     <view key="view" contentMode="scaleToFill" id="FNr-Xy-2Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="anR-b1-cAM">
+                                <rect key="frame" x="150" y="54" width="75" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="0BM-DO-czp"/>
+                                    <constraint firstAttribute="width" constant="75" id="FzK-Dr-BwE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-cz-Nre">
+                                <rect key="frame" x="39" y="306" width="303" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" backgroundImage="fbbutton.png"/>
+                                <connections>
+                                    <action selector="fbClick:" destination="daY-G9-WSY" eventType="touchUpInside" id="7aP-NR-hIU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="anR-b1-cAM" firstAttribute="top" secondItem="imf-WV-Byz" secondAttribute="bottom" constant="34" id="SXh-cN-FBs"/>
+                            <constraint firstItem="anR-b1-cAM" firstAttribute="centerX" secondItem="FNr-Xy-2Tt" secondAttribute="centerX" id="aFB-aU-RSV"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="fbCustom" destination="qJC-cz-Nre" id="jef-45-zOl"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" id="zox-rR-T8A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrZ-MT-2Lb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1883" y="75"/>
+            <point key="canvasLocation" x="-1884" y="74.212893553223395"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -748,11 +771,11 @@
             </objects>
             <point key="canvasLocation" x="-775.20000000000005" y="-733.5832083958021"/>
         </scene>
-        <!--Wishlist-->
+        <!--My Bids-->
         <scene sceneID="lXs-5R-FDx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ktr-5H-FOi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="bluestar.png" id="R8L-QI-HaT"/>
+                    <tabBarItem key="tabBarItem" title="My Bids" image="first" id="R8L-QI-HaT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PMY-hK-SIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -792,7 +815,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="3" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHt-Xc-kTC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" hidden="YES" contentMode="redraw" text="" translucent="NO" id="5k6-le-T6W">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -920,6 +944,7 @@
                                         <constraint firstItem="0GB-xX-IrK" firstAttribute="top" secondItem="EJd-tZ-kqf" secondAttribute="topMargin" id="pfP-qK-924"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="banner" destination="F2c-2d-DZp" id="tDj-Aw-wOK"/>
                                     <outlet property="picture" destination="0GB-xX-IrK" id="7qY-0g-0rP"/>
@@ -951,7 +976,46 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="679" y="188"/>
+            <point key="canvasLocation" x="674" y="134"/>
+        </scene>
+        <!--Form View-->
+        <scene sceneID="kHR-Wq-L5P">
+            <objects>
+                <viewController id="zje-zc-6xS" customClass="FormView" customModule="LuckyDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QML-7L-IJr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vz6-1L-eGb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="afw-HA-cBG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-qr-NCk">
+                                <rect key="frame" x="57" y="314" width="261" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Click this if Anthony Sucks"/>
+                                <connections>
+                                    <action selector="Ha:" destination="zje-zc-6xS" eventType="touchUpInside" id="272-YG-aws"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hE0-PV-oS0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="adh-qr-NCk" firstAttribute="centerX" secondItem="afw-HA-cBG" secondAttribute="centerX" id="Hq4-PB-0yr"/>
+                            <constraint firstItem="adh-qr-NCk" firstAttribute="centerY" secondItem="afw-HA-cBG" secondAttribute="centerY" id="WyE-wa-sxs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picture" destination="hE0-PV-oS0" id="UkI-Qw-PsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JK1-aI-cvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000.8" y="263.11844077961024"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Dnc-gT-b7M">
@@ -1022,11 +1086,13 @@
         <image name="Monarch_Cruise_Ship_uhd.jpg" width="3840" height="2160"/>
         <image name="bidButton.png" width="217" height="53"/>
         <image name="bluestar.png" width="26" height="25"/>
+        <image name="fbbutton.png" width="294" height="44"/>
+        <image name="first" width="30" height="30"/>
         <image name="goldWinIcon.png" width="34" height="31"/>
+        <image name="loginLogo.png" width="54" height="119"/>
         <image name="noun_1003231_F38F19.png" width="1152" height="1152"/>
         <image name="noun_975493_F38F19.png" width="1152" height="1152"/>
         <image name="search.png" width="349" height="34"/>
         <image name="whitebackground.png" width="156" height="156"/>
-        <image name="winIcon.png" width="34" height="31"/>
     </resources>
 </document>

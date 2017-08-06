@@ -240,11 +240,7 @@ class WishListController: UITableViewController , UISearchResultsUpdating, UISea
             myCell.picture.clipsToBounds = true
             
             
-            /* black overlay  */
-            let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: myCell.picture.frame.size.width + 100, height:  myCell.picture.frame.size.height))
-            overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.1)
-            myCell.picture.addSubview(overlay)
-            
+ 
             
             /* outline / shadow  */
             

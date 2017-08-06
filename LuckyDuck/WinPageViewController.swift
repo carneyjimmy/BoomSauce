@@ -25,8 +25,6 @@ class WinPageViewController: UIPageViewController, UIPageViewControllerDelegate,
         self.dataSource = self
         self.delegate = self
        
-        
-       
         self.pages.append(self.viewControllerAtIndex(index: 0)!)
         self.setViewControllers(self.pages, direction: .forward, animated: false, completion: nil)
         
