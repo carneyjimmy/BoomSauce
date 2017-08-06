@@ -42,6 +42,7 @@ class Login: UIViewController{
                 if error != nil {
                     
                 }
+                /*
                 let accessToken = FBSDKAccessToken.current()
                 let credentials = FIRFacebookAuthProvider.credential(withAccessToken: (accessToken?.tokenString)!)
                 
@@ -49,11 +50,11 @@ class Login: UIViewController{
                     if  error != nil {
                         return
                     }
-                    
+                    */
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
         
            
-                })
+                //})
             }
         }
     
